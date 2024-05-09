@@ -50,10 +50,47 @@ body {
   color: #e79345;
 }
 
-.navbar-logo h1 {
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 10px;
+}
+
+.navbar .menu-icon {
+  display: none;
+  cursor: pointer;
   color: white;
-  padding-left: 15px;
+  font-size: 24px;
+}
+
+.navbar-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
   margin: 0;
+  padding: 0;
+}
+
+.login-buttons li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.login-buttons li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.login-buttons li a:hover {
+  color: #e79345;
 }
 
 @media screen and (max-width: 480px) {

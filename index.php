@@ -8,12 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/index.css">
-    <title>Kávový Raj</title>
-</head>    
-    
-    <!-- Navigácia  -->
+    <title>Kávový raj</title>
+</head>
+<body>
+<!-- Navigácia  -->
     <?php
-        include_once('templates/partials/header.php');
+        include('partials/header.php');
     ?>   
     
     <!-- Zaciatok -->
@@ -26,7 +26,7 @@
                 <h1>Kávový raj</h1>
                 <p>Je čas sa zastaviť pre chutnú kávu.</p>
                 <p class="zac-text2">Rozpustite sa v atmosfére jedinečnej chuti a pohody. Užívajte si kúzlo čerstvo pripravenej kávy v našej kaviarni, kde sa spája jedinečný štýl s lahodnými zážitkami.</p>
-                <a href="templates/onas.php" class="button">O nás</a>
+                <a href="onas.php" class="button">O nás</a>
             </div>
         </div>
     </section>
@@ -94,5 +94,5 @@
 
     <!-- Footer -->
     <?php
-        include_once('templates/partials/footer.php');
+        include_once('partials/footer.php');
     ?>    

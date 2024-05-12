@@ -37,6 +37,6 @@
                 <p>&copy; Copyright 2023 by Martin Rosík</p>
             </div>
     </footer>
-    <script src="assets/js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

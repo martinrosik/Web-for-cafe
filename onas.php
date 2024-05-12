@@ -8,10 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/onas.css">
-    <title>Kávový Raj</title>
-</head>    
-    
-    <!-- Navigácia  -->
+    <title>O nás</title>
+</head>
+ <!-- Navigácia  -->
     <?php
         include('partials/header.php');
     ?>   
@@ -61,16 +60,16 @@
 
     <!-- Formulár -->
     <section class="formular">
-        <form>
+            <form action="_inc/classes/Formular.php" method="post">
             <h2>Kontaktujte nás</h2>
             <label for="meno">Vaše meno:</label>
-            <input type="text" id="meno" name="meno" required>
+            <input type="text" id="meno" name="meno" placeholder= "Vaše meno" required>
 
             <label for="email">Váš e-mail:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder= "Váš email" required>
 
             <label for="poznamka">Vaša poznámka:</label>
-            <textarea name="message" rows="10" cols="50">Tu napíšte Vašu poznámku:</textarea>
+            <textarea id="poznamka" name="message" rows="10" cols="50" placeholder= "Tu napíšte Vašu poznámku:"></textarea>
 
             <div class="suhlas">
                 <input type="checkbox" id="suhlas" name="suhlas" value="suhlas" required>
@@ -80,6 +79,7 @@
             <input class="button" type="submit" value="Odoslať">
         </form>
     </section>
+
     <!-- Footer -->
     <?php
         include_once('partials/footer.php');

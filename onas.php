@@ -12,6 +12,7 @@
 </head>
  <!-- Navigácia  -->
     <?php
+        session_start();
         include('partials/header.php');
     ?>   
     <!-- Akordeón -->

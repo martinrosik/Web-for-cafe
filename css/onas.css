@@ -186,6 +186,7 @@ input{
  }
 
 .footer-wrapper{
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: center;

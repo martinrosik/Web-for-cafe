@@ -13,9 +13,9 @@
 <body>
 <!-- Navigácia  -->
     <?php
+        session_start();
         include('partials/header.php');
     ?>   
-    
     <!-- Zaciatok -->
     <section class="zaciatok">
         <div class="zaciatok-wrapper">

@@ -15,38 +15,22 @@
 </body>
 </html>
 <?php
+    session_start();
     include('partials/header.php');
-    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+    if(isset($_SESSION['auth']) && $_SESSION['auth'] == true){
         header('Location: admin.php');
     }
 ?>
 <section class="formular">
-        <form action="" method="post">
+        <form action="Logincode.php" method="post">
             <h2>Prihlásiť sa</h2>
+            <?php 
+                include('Message.php'); 
+            ?>
             <label for="email">Váš e-mail:</label>
             <input type="email" id="email" name="email" placeholder= "Váš email" required>
             <label for="heslo">Vaše heslo:</label>
             <input type="text" id="password" name="password" placeholder="Vaše heslo">
-            <input class="button" type="submit" value="Prihlásiť sa">
+            <input class="button" type="submit" name= "loginbutton" value="Prihlásiť sa">
         </form>
-                <?php
-            
-                    if(isset($_POST['user_login'])){
-                        $email = $_POST['email'];
-                        $password = $_POST['password'];
-                        $user = new User();
-
-                        $login_success = $user->login($email,$password);
-                        if($login_success == true){
-                            header('Location: admin.php');
-                            exit;
-                        }else{
-                            echo 'Nesprávne meno alebo heslo';
-                        }
-                    }
-                
-                ?>
 </section> 
-<?php
-    include_once('partials/footer.php');
-?>

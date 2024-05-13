@@ -11,20 +11,21 @@
     <title>Registrácia</title>
 </head>
 <?php
+    session_start();
     include('partials/header.php'); 
 ?> 
 <section class="formular">
-              <form action="index.php" method="post">
+              <form action="Registercode.php" method="post">
                     <h2>Registrácia</h2>
+                    <?php 
+                        include('Message.php'); 
+                    ?>
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" placeholder="Váš email" required>
                     <label for="password">Heslo:</label>
                     <input type="password" id="password" name="password" placeholder="Vaše heslo" required >
                     <label for="confirm_password">Zopakovať heslo:</label>
-                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Znova vaše heslo" required >
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Zopakujte heslo" required >
                     <input class="button" type="submit" name="user_register" value="Registrovať sa">
               </form>
 </section>
-<?php
-    include_once('partials/footer.php')
-?> 

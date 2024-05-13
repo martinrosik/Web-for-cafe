@@ -11,7 +11,7 @@
     <title>Ďakujeme!</title>
 </head>
 <?php 
-    include_once('partials/header.php')
+    include('partials/header.php')
 ?>  
 <div class = "text">
     <h1 id = "thankyou">Ďakujeme!</h1>

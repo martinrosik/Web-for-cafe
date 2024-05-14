@@ -11,13 +11,15 @@
             'Galéria' => 'galeria.php',
             'Menu' => 'menu.php',
         );
-
         if(isset($_SESSION['auth']) && $_SESSION['auth'] == true){
             $pages['Odhlásiť sa'] = 'Logout.php';
-         } else {
+            if(isset($_SESSION['auth_role']) && $_SESSION['auth_role'] == 1){
+                $pages['Admin panel'] = 'Admin.php';
+            }
+        } else {
             $pages['Prihlásiť sa'] = 'login.php';
             $pages['Registrácia'] = 'register.php';
-         }
+        }
         
         $navbar = new Menu($pages);
         echo $navbar->generate_menu();

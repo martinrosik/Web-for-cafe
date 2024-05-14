@@ -17,7 +17,7 @@
             }
 
             $_SESSION['auth'] = true;
-            $_SESSION['auth_role'] =  "$role"; 
+            $_SESSION['auth_role'] = "$role"; 
             $_SESSION['auth_user'] = [
                 'user_id' => $user_id,
                 'user_email' => $user_email
@@ -26,22 +26,21 @@
             if($_SESSION['auth_role'] == '1') { 
                 $_SESSION['message'] = "Vitajte v admin panely";
                 header('Location: admin.php');
-                exit(0); 
+                exit(); 
             } elseif($_SESSION['auth_role'] == '0') { 
                 $_SESSION['message'] = "Ste prihlásený";
                 header('Location: index.php');
-                exit(0); 
+                exit(); 
             }
 
         } else {
             $_SESSION['message'] = "Nesprávny email alebo heslo";
             header('Location: login.php');
-            exit(0); 
+            exit(); 
         }
     } else {
         $_SESSION['message'] = "Nie je možný prístup";
-        $_SESSION['auth'] = false;
         header('Location: login.php');
-        exit(0);
+        exit();
     }
 ?>

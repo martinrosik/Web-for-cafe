@@ -3,9 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: 'Roboto Slab', sans-serif;
-}
 
 .navbar {
   display: flex;
@@ -199,3 +196,4 @@ footer h4 {
       margin-top: 20px;
   }
 }
+

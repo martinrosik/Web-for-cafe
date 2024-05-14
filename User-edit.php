@@ -13,37 +13,38 @@
     include('_inc/classes/Connect.php');
 ?>
 <div class="textadmin">
-<h1 class= "Admintext">Úprava kontakov:</h1>  
+<h1 class= "Admintext">Úprava používateľov:</h1>  
 </div>
 <div class="card-body">
     <?php
         if(isset($_GET['id'])) {
-            $user_id = $_GET['id'];
-            $users = "SELECT * FROM kontakt WHERE id='$user_id'";
-            $user_run = mysqli_query($conn, $users);
+            $userid = $_GET['id'];
+            $user = "SELECT * FROM users WHERE id='$userid'";
+            $userrun = mysqli_query($conn, $user);
             
-            if(mysqli_num_rows($user_run) > 0) {
-                foreach($user_run as $user) {
+            if(mysqli_num_rows($userrun) > 0) {
+                foreach($userrun as $userr) {
                     ?>
-                        <form action="Kontakt-update.php" method="POST">
+                        <form action="User-update.php" method="POST">
                             <div class="row">
                                 <div class="col-md-12 mb-4">
-                                    <input type="hidden" name="id" value="<?= $user['id'];?>" class="form-control">
-                                </div>
-                                <div class="col-md-12 mb-4">
-                                    <label for="">Meno:</label>
-                                    <input type="text" name="meno" value="<?= $user['meno'];?>" class="form-control">
+                                    <label for="">User ID:</label>
+                                    <input type="text" name="id" value="<?= $userr['id'];?>" class="form-control">
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="">Email:</label>
-                                    <input type="text" name="email" value="<?= $user['email'];?>" class="form-control">
+                                    <input type="text" name="email" value="<?= $userr['email'];?>" class="form-control">
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                    <label for="">Poznamka:</label>
-                                    <input type="text" name="poznamka" value="<?= $user['poznamka'];?>" class="form-control">
+                                    <label for="">Password:</label>
+                                    <input type="text" name="heslo" value="<?= $userr['password'];?>" class="form-control">
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                    <button type="submit" name="kontakt_uprava" class="btn btn-success">Upraviť kontakt</button>
+                                    <label for="">Role:</label>
+                                    <input type="text" name="role" value="<?= $userr['role'];?>" class="form-control">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <button type="submit" name="user_uprava" class="btn btn-success">Upraviť požívateľa</button>
                                 </div>
                             </div>
                         </form>

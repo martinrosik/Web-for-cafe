@@ -12,7 +12,7 @@
             $checkemail_run = mysqli_query($conn, $checkemail);
 
             if(mysqli_num_rows($checkemail_run) > 0) {
-                $_SESSION['message'] = "Tento email nie je možné použiť";
+                $_SESSION['message'] = "Tento email nie je možné použiť!";
                 header('Location: register.php');
                 exit();
             } else {
@@ -20,17 +20,17 @@
                 $userquery_run = mysqli_query($conn, $userquery);  
 
                 if($userquery_run) {
-                    $_SESSION['message'] = "Registrácia úspešná";
+                    $_SESSION['message'] = "Registrácia úspešná!";
                     header('Location: login.php');
                     exit();
                 } else {
-                    $_SESSION['message'] = "Registrácia neúspešná";
+                    $_SESSION['message'] = "Registrácia neúspešná!";
                     header('Location: register.php');
                     exit();
                 }
             }
         } else {
-            $_SESSION['message'] = "Heslá sa nezhodujú";
+            $_SESSION['message'] = "Heslá sa nezhodujú!";
             header('Location: register.php');
             exit();
         }

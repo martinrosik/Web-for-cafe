@@ -16,9 +16,6 @@
 <?php
     session_start();
     include('partials/header.php');
-    if(isset($_SESSION['auth']) && $_SESSION['auth'] == true){
-        header('Location: admin.php');
-    }
 ?>
 <section class="formular">
         <form action="Logincode.php" method="post">

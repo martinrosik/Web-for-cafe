@@ -8,11 +8,11 @@
         $query_run = mysqli_query($conn, $query);
 
         if($query_run) {
-            $_SESSION['message'] = "Kontakt vymazaný úspešne";
+            $_SESSION['message'] = "Kontakt vymazaný úspešne!";
             header('Location: Admin.php');
             exit();
         } else {
-            $_SESSION['message'] = "Mazanie neúspešná";
+            $_SESSION['message'] = "Mazanie neúspešné!";
             header('Location: Admin.php');
             exit();
         }
@@ -28,11 +28,11 @@
         $query_run = mysqli_query($conn, $query);
 
         if($query_run) {
-            $_SESSION['message'] = "Úprava úspešná";
+            $_SESSION['message'] = "Úprava úspešná!";
             header('Location: Admin.php');
             exit();
         } else {
-            $_SESSION['message'] = "Úprava neúspešná";
+            $_SESSION['message'] = "Úprava neúspešná!";
             header('Location: Admin.php');
             exit();
         }

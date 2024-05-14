@@ -24,22 +24,22 @@
             ];
 
             if($_SESSION['auth_role'] == '1') { 
-                $_SESSION['message'] = "Vitajte v admin panely";
+                $_SESSION['message'] = "Vitajte v admin panely!";
                 header('Location: admin.php');
                 exit(); 
             } elseif($_SESSION['auth_role'] == '0') { 
-                $_SESSION['message'] = "Ste prihlásený";
+                $_SESSION['message'] = "Ste prihlásený!";
                 header('Location: index.php');
                 exit(); 
             }
 
         } else {
-            $_SESSION['message'] = "Nesprávny email alebo heslo";
+            $_SESSION['message'] = "Nesprávny email alebo heslo!";
             header('Location: login.php');
             exit(); 
         }
     } else {
-        $_SESSION['message'] = "Nie je možný prístup";
+        $_SESSION['message'] = "Nie je možný prístup!";
         header('Location: login.php');
         exit();
     }

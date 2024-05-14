@@ -15,6 +15,10 @@
 <div class="textadmin">
 <h1 class= "Admintext">Admin rozhranie:</h1>  
 </div>
+<div class="container">
+    <div>
+        <h2>List kontaktov:</h2>
+    </div>
 <div class="table-container">
   <table class="table">
     <thead>
@@ -44,7 +48,7 @@
                             <td><?=$item['acceptance']?></td>
                             <td><a href="Kontakt-edit.php?id=<?=$item['id']?>" class="btn btn-success">Edit</a></td>
                             <td>
-                              <form action = "Update.php" method="POST">
+                              <form action = "Kontakt-update.php" method="POST">
                                 <button type="submit" name="kontakt_delete" value="<?= $item['id']?>" class="btn btn-danger">Delete</button>
                               </form>
                             </td> 
@@ -61,4 +65,53 @@
         ?>
     </tbody>
   </table>
+</div>
+<div class="container">
+    <div>
+        <h2>List požívateľov:</h2>
+    </div>
+<div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Role</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+          <?php 
+              $query = "SELECT * FROM users";
+              $query_run = mysqli_query($conn, $query);
+
+              if(mysqli_num_rows($query_run) > 0) {
+                  foreach($query_run as $item) {
+                      ?>
+                          <tr>
+                              <td><?= $item['id']?></td>
+                              <td><?=$item['email']?></td>
+                              <td><?=$item['password']?></td>
+                              <td><?=$item['role']?></td>
+                              <td><a href="User-edit.php?id=<?=$item['id']?>" class="btn btn-success">Edit</a></td>
+                              <td>
+                                <form action = "User-update.php" method="POST">
+                                  <button type="submit" name="user_delete" value="<?= $item['id']?>" class="btn btn-danger">Delete</button>
+                                </form>
+                              </td> 
+                          </tr>
+                      <?php
+                  }
+              } else {
+                  ?>
+                    <tr>
+                      <td colspan="5">Nenašli sa žiadne dáta</td>
+                    </tr>  
+                  <?php 
+              }
+          ?>
+      </tbody>
+  </table>          
 </div>

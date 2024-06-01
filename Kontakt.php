@@ -1,35 +1,48 @@
-<?php 
-    session_start();
-    include('_inc/classes/Connect.php');
+<?php
+session_start();
 
-    if(isset($_POST['kontakt_submitted'])) {
-        $meno = $_POST['meno'];
-        $email = $_POST['email'];
-        $poznamka = $_POST['poznamka'];
-        $acceptance = $_POST['suhlas'];
+class ContactForm {
+    private $conn;
 
-        $checkemail = "SELECT email FROM kontakt WHERE email = '$email'";
-        $checkemail_run = mysqli_query($conn, $checkemail);
-        if(mysqli_num_rows($checkemail_run) > 0) {
-            $_SESSION['message'] = "Tento email nie je možné použiť";
-            header('Location: onas.php');
-            exit();
-        } else {
-            $kontaktquery = "INSERT INTO kontakt (meno, email, poznamka, acceptance) VALUES ('$meno', '$email', '$poznamka', '$acceptance')";
-            $kontakt_run = mysqli_query($conn, $kontaktquery);  
+    public function __construct($conn) {
+        $this->conn = $conn;
+    }
 
-            if($kontakt_run) {
-                $_SESSION['message'] = "Formulár bol úspešne odoslaný";
-                header('Location: onas.php');
-                exit();
+    public function processForm() {
+        if(isset($_POST['kontakt_submitted'])) {
+            $meno = $_POST['meno'];
+            $email = $_POST['email'];
+            $poznamka = $_POST['poznamka'];
+            $acceptance = $_POST['suhlas'];
+
+            $checkemail = "SELECT email FROM kontakt WHERE email = '$email'";
+            $checkemail_run = mysqli_query($this->conn, $checkemail);
+            if(mysqli_num_rows($checkemail_run) > 0) {
+                $_SESSION['message'] = "Tento email nie je možné použiť";
+                $this->redirect('onas.php');
             } else {
-                $_SESSION['message'] = "Nastala chyba skúste to znova";
-                header('Location: onas.php');
-                exit();
+                $kontaktquery = "INSERT INTO kontakt (meno, email, poznamka, acceptance) VALUES ('$meno', '$email', '$poznamka', '$acceptance')";
+                $kontakt_run = mysqli_query($this->conn, $kontaktquery);  
+
+                if($kontakt_run) {
+                    $_SESSION['message'] = "Formulár bol úspešne odoslaný";
+                } else {
+                    $_SESSION['message'] = "Nastala chyba skúste to znova";
+                }
+                $this->redirect('onas.php');
             }
+        } else {
+            $this->redirect('onas.php');
         }
-    } else {
-        header('Location: onas.php');
+    }
+
+    private function redirect($location) {
+        header("Location: $location");
         exit();
     }
+}
+
+include('_inc/classes/Connect.php'); 
+$contactForm = new ContactForm($conn); 
+$contactForm->processForm();
 ?>

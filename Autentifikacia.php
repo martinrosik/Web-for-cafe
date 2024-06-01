@@ -1,15 +1,35 @@
-<?php 
-    include('_inc/classes/Connect.php');
+<?php
+include('_inc/classes/Connect.php');
 
-    if(!isset($_SESSION['auth'])) {
-        $_SESSION['message'] = "Pre prístup do admin rozhrania je nutné prihlásenie!";
-        header('Location: login.php');
-        exit();
-    } else {
-        if($_SESSION['auth_role'] != '1') {
-            $_SESSION['message'] = "Nemáte prístup do Admin rozhrania!";
-            header('Location: login.php');
-            exit();
+class Auth {
+    private $authRole;
+    private $auth;
+
+    public function __construct() {
+        $this->auth = isset($_SESSION['auth']) ? $_SESSION['auth'] : null;
+        $this->authRole = isset($_SESSION['auth_role']) ? $_SESSION['auth_role'] : null;
+    }
+
+    public function checkAuth() {
+        if (!$this->auth) {
+            $this->setMessageAndRedirect("Pre prístup do admin rozhrania je nutné prihlásenie!", 'login.php');
         }
-    }   
-?> 
+    }
+
+    public function checkAdmin() {
+        if ($this->authRole != '1') {
+            $this->setMessageAndRedirect("Nemáte prístup do Admin rozhrania!", 'login.php');
+        }
+    }
+
+    private function setMessageAndRedirect($message, $location) {
+        $_SESSION['message'] = $message;
+        header("Location: $location");
+        exit();
+    }
+}
+
+$auth = new Auth();
+$auth->checkAuth();
+$auth->checkAdmin();
+?>

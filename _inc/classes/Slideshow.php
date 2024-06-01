@@ -46,9 +46,9 @@
     }
 
     $imagePaths = [
-        "img/kaviaren-galeria1.jpg",
-        "img/kaviaren-galeria2.jpg",
-        "img/kaviaren-galeria3.jpg"
+        "assets/img/kaviaren-galeria1.jpg",
+        "assets/img/kaviaren-galeria2.jpg",
+        "assets/img/kaviaren-galeria3.jpg"
     ];
 
     $slideshow = new Slideshow($imagePaths);

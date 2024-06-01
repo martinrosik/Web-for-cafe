@@ -6,20 +6,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <title>Kávový raj</title>
 </head>
 <body>
 <!-- Navigácia  -->
     <?php
         session_start();
-        include('partials/header.php');
+        include('templates/partials/header.php');
     ?>   
     <!-- Zaciatok -->
     <section class="zaciatok">
         <div class="zaciatok-wrapper">
             <div class="zaciatok-obr">
-                <img src="img/zaciatok.jpg" alt="priestory kaviarne">
+                <img src="assets/img/zaciatok.jpg" alt="priestory kaviarne">
             </div>
             <div class="zaciatok-text">
                 <h1>Kávový raj</h1>
@@ -39,7 +39,7 @@
                 <p>Vitajte v našej kaviarni, mi sme viac než len miesto s vynikajúcou kávou - sme centrom radosti, oddychu a skvelých zážitkov. Naša vášeň pre kvalitu a lásku k detailom nás robí jedinečnými.</p>
             </div>
             <div class="zrucnosti-obr">
-                <img src="img/kaviaren4.jpg" alt="pohár kávy" height="600">
+                <img src="assets/img/kaviaren4.jpg" alt="pohár kávy" height="600">
             </div>
         </div>
     </section>
@@ -48,7 +48,7 @@
     <section class="vyroba">
         <div class="vyroba-wrapper">
             <div class="vyroba-obr">
-                <img src="img/vyroba-obr.jpg" alt="stroj na výrobu kávy" width="580">
+                <img src="assets/img/vyroba-obr.jpg" alt="stroj na výrobu kávy" width="580">
             </div>
             <div class="vyroba-text">
                 <h2>Proces robenia kávy v našej kaviarni:</h2>
@@ -76,7 +76,7 @@
                 <p>Vitajte v našej kaviarni! Očarujte svoje chuťové bunky v našom útulnom prostredí plnom vôňe čerstvo zomletej kávy a lahodných dezertov. Tešíme sa na vás každý deň!</p>
             </div>
             <div class="ot-img-s">
-                <img src="img/otvaracie-hod.png" alt="šálka kávy">
+                <img src="assets/img/otvaracie-hod.png" alt="šálka kávy">
             </div>
             <div class="ot-text-p">
                 <h4>Otváracie hodiny:</h4>
@@ -93,5 +93,5 @@
 
     <!-- Footer -->
     <?php
-        include_once('partials/footer.php');
+        include_once('templates/partials/footer.php');
     ?>    

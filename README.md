@@ -1,5 +1,53 @@
-<h1>Learning PHP with creating web for virtual Cafe</h1>
-<p>I had to make some basic CRUD operations in PHP so i decided to make login and register panel also with admin panel when admin logs in.</p>
-<p>It was my first experience with PHP and also with object oriented programming in this language...</p>
-<p>In this project i learned how to make basic database in PHPMyAdmin, CRUD operations over database and the most important part ✨ connecting database to my code ✨.</p>
-<p>Enjoy! 🪄</p>
+# ☕ Web for Cafe
+
+A web application for managing a cafe, featuring an admin panel for CRUD operations, user authentication, and a database connection. Developed using PHP with an object-oriented approach.
+
+---
+
+## 📋 Features
+
+- 🛠️ **CRUD Operations**: Manage cafe data through the admin panel.
+- 🔐 **User Authentication**: Login and register functionality with session handling.
+- 🗃️ **Database Integration**: Connects to a database for data storage and retrieval.
+- 🧑‍💻 **Object-Oriented Design**: Structured code using OOP principles.
+
+---
+
+## 🚀 Installation
+
+1. **Clone the repository:**
+    ```
+    git clone https://github.com/martinrosik/Web-for-cafe
+    ```
+2. **Navigate to the project folder:**
+    ```
+    cd Web-for-cafe
+    ```
+3. **Configure the Database:**
+
+- Create a database and import the provided .sql file.
+- Update the database credentials in the config file (Connect.php).
+    
+4. **Start a Local Server**:
+    ```
+    php -S localhost:8000
+    ```
+
+---
+    
+## 🖥️ Usage
+  - **Admin Panel:** Log in as an admin to perform CRUD operations.
+  - **User Registration & Login:** Register as a new user or log in to access features.
+
+---
+
+### 📂 File Structure
+- 📁 /config: Database configuration.
+- 📁 /controllers: Contains classes for CRUD operations.
+- 📁 /views: UI templates for the application.
+- 📁 /models: Database models for each entity.
+
+---
+
+## 🤝 Contributing
+- Feel free to fork the repository and submit pull requests. Contributions are welcome!

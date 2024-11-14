@@ -17,11 +17,11 @@ A web application for managing a cafe, featuring an admin panel for CRUD operati
 
 1. **Clone the repository:**
     ```
-    git clone https://github.com/martinrosik/WebForCafe
+    git clone https://github.com/martinrosik/WebForCafe.git
     ```
 2. **Navigate to the project folder:**
     ```
-    cd Web-for-cafe
+    cd WebForCafe
     ```
 3. **Configure the Database:**
 

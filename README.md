@@ -37,8 +37,9 @@ A web application for managing a cafe, featuring an admin panel for CRUD operati
     
 ## 🖥️ Usage
   - **Admin Panel:** Log in as an admin to perform CRUD operations.
+    - In admin panel you can adding or deleting registered users from database.
   - **User Registration & Login:** Register as a new user or log in to access features.
-
+    - Sadly there are no features for loggined user.
 ---
 
 ### 📂 File Structure

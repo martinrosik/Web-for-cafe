@@ -17,7 +17,7 @@ A web application for managing a cafe, featuring an admin panel for CRUD operati
 
 1. **Clone the repository:**
     ```
-    git clone https://github.com/martinrosik/Web-for-cafe
+    git clone https://github.com/martinrosik/WebForCafe
     ```
 2. **Navigate to the project folder:**
     ```
